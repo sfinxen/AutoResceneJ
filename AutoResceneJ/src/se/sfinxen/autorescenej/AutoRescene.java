@@ -151,7 +151,7 @@ public class AutoRescene
   {
     JSONObject json = new JSONParser().getJSONFromUrl(config.getSearchURL() + crc);
     
-    if (json.get("resultsCount").equals("0"))
+    if (json.get("resultsCount").toString().equals("0"))
     {
       this.print("No SRR found, skipping " + currentFile.getName() + ".");
     }
@@ -206,7 +206,7 @@ public class AutoRescene
     
     srrFile.delete();
     
-    if (config.isResample())
+    if (config.isResample() && this.srrResult.hasSRS())
     {
       findSRSCandidates(new File(this.searchPath + this.srrResult.getRelease()), this.searchPath + this.srrResult.getRelease() + "/Sample/");
     }

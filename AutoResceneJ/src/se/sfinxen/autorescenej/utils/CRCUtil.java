@@ -29,6 +29,13 @@ public class CRCUtil
     
     inputStream.close();
     
-    return Long.toHexString(crcMaker.getValue());
+    String crc = Long.toHexString(crcMaker.getValue());
+    
+    while (crc.length() < 8)
+    {
+      crc = "0" + crc;
+    }
+    
+    return crc;
   }
 }
