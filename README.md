@@ -3,3 +3,7 @@ This is an easy to use utility written in Java. It's main purpose is to be used 
 usage: java -jar autorescenej.jar "pathToScan"
 
 Configurations should be made in the autorescenej.cfg configfile. Linking to the pyRescene-location is nescessary.
+
+<h1>Requirements</h1>
+
+<a href="https://bitbucket.org/Gfy/pyrescene">PyRescene 0.5 (or newer)</a>
