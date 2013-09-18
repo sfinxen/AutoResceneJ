@@ -187,7 +187,7 @@ public class AutoRescene
    */
   private void doRescene(File srrFile) throws IOException
   {
-    String runPath = config.getSRRPath() + "srr.exe -y -p -r -i " + this.searchPath + " -o " + this.searchPath + this.srrResult.getRelease() + "/" + " " + srrFile.getAbsolutePath();
+    String runPath = config.getSRRPath() + "srr.exe -y -p -r -i \"" + this.searchPath + "\" -o \"" + this.searchPath + this.srrResult.getRelease() + "/" + "\" \"" + srrFile.getAbsolutePath() + "\"";
     
     System.out.println("Rebuilding " + this.srrResult.getRelease());
     
@@ -221,7 +221,7 @@ public class AutoRescene
    */
   private void doResample(File srsFile, String sampleDir) throws IOException
   {
-    String srsRunPath = config.getSRSPath() + "srs.exe " + srsFile.getAbsolutePath() + " -y -o " + sampleDir + " " + currentFile.getAbsolutePath();
+    String srsRunPath = config.getSRSPath() + "srs.exe \"" + srsFile.getAbsolutePath() + "\" -y -o \"" + sampleDir + "\" \"" + currentFile.getAbsolutePath() + "\"";
     
     Process p = Runtime.getRuntime().exec(srsRunPath);
     
