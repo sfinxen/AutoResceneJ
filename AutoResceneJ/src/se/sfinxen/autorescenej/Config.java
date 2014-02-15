@@ -30,7 +30,7 @@ public class Config
   
   private void readConfigFile()
   {
-    String configFile = "autorescenej.cfg";
+    String configFile = ClassLoader.getSystemClassLoader().getResource(".").getPath() + "autorescenej.cfg";
     
     if (!new File(configFile).exists())
     {
